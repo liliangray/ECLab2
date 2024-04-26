@@ -1,3 +1,4 @@
-FROM php:7.4-apache
-COPY . /var/www/html/
-EXPOSE 80
+FROM gcc:latest
+COPY nfl_scores.c .
+RUN gcc -o main nfl_scores.c
+CMD ["./main"]
